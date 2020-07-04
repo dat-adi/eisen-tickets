@@ -26,6 +26,9 @@ class ticket_maker:
     def change_content(self, content):
         self.content = content
 
+    def add_more_info(self, more_info):
+        self.more_info = more_info
+
 if __name__ == "__main__":
     sample_ticket = ticket_maker("test_category", "testing it out")
     print("Time stamp : {}\nCategory : {}\nContent : {}".format(sample_ticket.timestamp, sample_ticket.category, sample_ticket.content))
