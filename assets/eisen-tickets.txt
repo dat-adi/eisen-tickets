@@ -1,0 +1,8 @@
+{
+    "1": {
+        "Category": "DO",
+        "Content": "Adding ticket id to the writer",
+        "More Info": "Overwriting the ticket leaves it becoming redundant essentially.",
+        "Time Stamp": "2020-07-05 14:06:48.541952"
+    }
+}
