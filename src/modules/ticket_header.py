@@ -22,9 +22,7 @@ class ticket_maker:
         self.task = task
         self.more_info = more_info
 
-        self.ticket = {}
-
-        self.ticket[self.ticket_id] = {"Time Stamp" : str(self.timestamp), "Category" : self.category, "Content" : self.task, "More Info" : self.more_info}
+        self.ticket = {self.ticket_id : {"Time Stamp" : str(self.timestamp), "Category" : self.category, "Content" : self.task, "More Info" : self.more_info}}
 
     def change_category(self, category):
         self.category = category
@@ -52,7 +50,7 @@ def selection():
     task = input("Enter the task at hand : ")
     more_info = input("Enter details of task : ")
     category = categories[category_number-1]
-    ticket_id = 1 # still have to work on the sorting of the ticket ids
+    ticket_id = 2 # still have to work on the sorting of the ticket ids
     print("[INFO] Ticket Created...\n")
 
     return ticket_maker(ticket_id, category, task, more_info).return_ticket_info()
