@@ -1,1 +1,1 @@
-{"4": {"Time Stamp": "2020-07-06 14:31:59.695659", "Category": "DO", "Content": "nohting", "More Info": "asdfasdfasdf"}}
+{"4": {"Time Stamp": "2020-07-06 20:18:38.888574", "Category": "DO", "Content": "Commiting the changes to github", "More Info": "Commiting the changes will ensure that I can plan for the next stage of eisen's tickets without worrying."}}
