@@ -1,5 +1,9 @@
 # Eisen-tickets
 
+<p align="center">
+    <img src="assets/large-logo.PNG" alt="eisen-tickets logo">
+</p>
+
 ## What the Eisen-tickets is all about.
 An implementation of the famous Eisenhower Box, where the 2x2 matrix defines
 the priority and the status of the task at hand.
@@ -8,7 +12,7 @@ Having two categories, Urgency and Importancy mixed, enables you to get a cleare
 understanding of which task to invest more time into.
 
 ## Installation
-The Eisen tickets can easily be brought into your system, just by simply dowloading one of the [releases]() or by cloning the repository,
+The Eisen tickets can easily be brought into your system, just by simply dowloading one of the [releases](github.com/dat-adi/eisen-tickets/releases) or by cloning the repository,
 ```shell
 git clone https://github.com/dat-adi/eisen-tickets.git
 ```
