@@ -10,7 +10,7 @@ understanding of which task to invest more time into.
 ## Installation
 The Eisen tickets can easily be brought into your system, just by simply dowloading one of the [releases]() or by cloning the repository,
 ```shell
-git clone 
+git clone https://github.com/dat-adi/eisen-tickets.git
 ```
 
 ## How the eisen-tickets work
