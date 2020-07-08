@@ -1,13 +1,12 @@
 import json
 from modules.ticket_header import selection
+from modules.ticket_writer import category_write
 
 if __name__ == "__main__":
 
     version_info = open("../assets/version.txt", 'r').read()
     print("Eisenhower Tickets | " + version_info)
-    ticket = selection()
+    ticket, category = selection()
     print("Adding Ticket to Eisen's Tickets...")
-    
-    with open("../assets/eisen-tickets.txt", 'w') as f:
-        f.write(json.dumps(ticket))
+    category_write(ticket, category)
 

@@ -16,10 +16,10 @@ Task :
 '''
 
 class ticket_maker:
-    def __init__(self, ticket_id, category, task, more_info):
-        self.ticket_id = ticket_id
+    def __init__(self, category, task, more_info):
         self.category = category
         self.timestamp = dt.now()
+        self.ticket_id = ticket_alloter(self.category)
         self.task = task
         self.more_info = more_info
         
@@ -39,6 +39,9 @@ class ticket_maker:
     def return_ticket_info(self):
         return self.ticket
 
+    def return_category(self):
+        return self.category
+
 def selection():
     print("Categories")
     print("-"*10)
@@ -53,10 +56,10 @@ def selection():
     task = input("Enter the task at hand : ")
     more_info = input("Enter details of task : ")
     category = categories[category_number-1]
-    ticket_id = ticket_alloter()
     print("[INFO] Ticket Created...\n")
+    temp_ticket = ticket_maker(category, task, more_info)
 
-    return ticket_maker(ticket_id, category, task, more_info).return_ticket_info()
+    return temp_ticket.return_ticket_info(), temp_ticket.return_category() 
     
 
 if __name__ == "__main__":
