@@ -1,4 +1,3 @@
-import json
 from modules.ticket_header import selection
 from modules.ticket_writer import category_write
 

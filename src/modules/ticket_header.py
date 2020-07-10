@@ -15,6 +15,7 @@ Content
 Task : 
 '''
 
+
 class ticket_maker:
     def __init__(self, category, task, more_info):
         self.category = category
@@ -23,9 +24,9 @@ class ticket_maker:
         self.task = task
         self.more_info = more_info
         
-        self.ticket = {}
-
-        self.ticket[self.ticket_id] = {"Time Stamp" : str(self.timestamp), "Category" : self.category, "Content" : self.task, "More Info" : self.more_info}
+        self.ticket = {
+            self.ticket_id: {"Time Stamp": str(self.timestamp), "Category": self.category, "Content": self.task,
+                             "More Info": self.more_info}}
 
     def change_category(self, category):
         self.category = category
@@ -41,6 +42,7 @@ class ticket_maker:
 
     def return_category(self):
         return self.category
+
 
 def selection():
     print("Categories")
