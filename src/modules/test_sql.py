@@ -1,4 +1,4 @@
-from modules.db_insertion import create_table, insertion_row, create_connection
+from modules.db_main import create_table, insertion_row, create_connection
 
 
 def main():
