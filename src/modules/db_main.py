@@ -2,8 +2,8 @@ from modules.create_db_components import insertion_row, create_connection, creat
 from modules.db_ticket_maker import selection
 
 
-def main():
-    conn = create_connection(r"D:\eisen-tickets\assets\test2.db")
+def table_initialization():
+    conn = create_connection(r"D:\eisen-tickets\assets\tickets.db")
     create_sql_table = '''CREATE TABLE IF NOT EXISTS tickets (
                             id integer PRIMARY KEY,
                             timestamp text NOT NULL,
@@ -18,4 +18,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    table_initialization()
