@@ -1,33 +1,5 @@
-import sqlite3
-from sqlite3 import Error
-
-
-def insertion_row(conn, ticket):
-    sql = """INSERT INTO tickets (timestamp, category, task, more_info) \
-                  VALUES (?, ?, ?, ?);"""
-    cur = conn.cursor()
-    cur.execute(sql, ticket)
-    conn.commit()
-    return cur.lastrowid
-
-
-def create_table(conn, create_table_sql):
-    try:
-        cur = conn.cursor()
-        cur.execute(create_table_sql)
-    except Error as e:
-        print(e)
-
-
-def create_connection(db_file):
-    conn = None
-    try:
-        conn = sqlite3.connect(db_file)
-        return conn
-    except Error as e:
-        print(e)
-
-    return conn
+from modules.create_db_components import insertion_row, create_connection, create_table
+from modules.db_ticket_maker import selection
 
 
 def main():
@@ -41,10 +13,9 @@ def main():
                         );'''
     if conn is not None:
         create_table(conn, create_sql_table)
-        ticket_1 = ("09/10/2020", "DO", "Study Math", "Math is pretty much always a to be studied.")
-        ticket_2 = ("19/10/2020", "DO", "Study Math", "Math is always a to be studied.")
-        insertion_row(conn, ticket_1)
-        insertion_row(conn, ticket_2)
+        ticket = selection()
+        insertion_row(conn, ticket)
+
 
 if __name__ == "__main__":
     main()
