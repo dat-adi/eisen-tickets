@@ -23,4 +23,4 @@ def display_info_category(conn, category):
 
 if __name__ == "__main__":
     connection = create_connection(r"D:\eisen-tickets\assets\tickets.db")
-    display_info(connection, "DO")
+    display_info_category(connection, "DO")

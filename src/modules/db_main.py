@@ -15,20 +15,22 @@ def table_initialization():
                         );'''
     if conn is not None:
         create_table(conn, create_sql_table)
-        if option_screen() is 1:
+        response = option_screen()
+        if response == 1:
             display_info_category(conn, "DO")
-        if option_screen() is 2:
+        elif response == 2:
             display_info_category(conn, "DEC")
-        if option_screen() is 3:
+        elif response == 3:
             display_info_category(conn, "DLG")
-        if option_screen() is 4:
+        elif response == 4:
             display_info_category(conn, "DEL")
-        if option_screen() is 5:
+        elif response == 5:
             display_info(conn)
-        elif option_screen() is 6:
+        elif response == 6:
             while True:
                 ticket = selection()
                 insertion_row(conn, ticket)
+                print("Adding Ticket to Eisen's Tickets...")
                 if input("Do you wish to continue adding entries? (y/n) : ") == 'n':
                     break
 
