@@ -7,4 +7,3 @@ if __name__ == "__main__":
     print("Starting up the selection screen...")
     table_initialization()
     print("Adding Ticket to Eisen's Tickets...")
-
