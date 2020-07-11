@@ -8,7 +8,7 @@
 An implementation of the famous Eisenhower Box, where the 2x2 matrix defines
 the priority and the status of the task at hand.
 
-Having two categories, Urgency and Importancy mixed, enables you to get a clearer
+Having two categories, Urgency and Importance mixed, enables you to get a clearer
 understanding of which task to invest more time into.
 
 ## Installation
