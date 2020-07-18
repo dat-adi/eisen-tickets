@@ -9,7 +9,7 @@ if __name__ == "__main__":
         print("Starting up the selection screen...")
         table_initialization()
         cont = input("Do you wish to restart the service? (y/n) : ")
-        if cont is 'n':
+        if cont == 'n':
             print("Exiting Eisen's Tickets...")
             break
         print("Restarting Eisen's Tickets...")
