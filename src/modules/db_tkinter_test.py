@@ -38,53 +38,54 @@ def del_cat(conn):
     return rows
 
 
-def labels_in_screen(conn, ltf, rtf, lbf, rbf):
+class windows:
+    def __init__(self, conn):
+        self.root = Tk()
+        self.conn = conn
 
-    do_rows = do_cat(conn)
-    for element in do_rows:
-        Label(ltf, text=element, fg="black")
-    dec_rows = dec_cat(conn)
-    for element in dec_rows:
-        Label(rtf, text=element, fg="black")
-    dlg_rows = dlg_cat(conn)
-    for element in dlg_rows:
-        Label(lbf, text=element, fg="black")
-    del_rows = del_cat(conn)
-    for element in del_rows:
-        Label(rbf, text=element, fg="black")
+        self.mainFrame = Frame(self.root, height=400, width=600)
+        self.mainFrame.pack()
 
+        self.topRow = Frame(self.mainFrame, height=200, width=600)
+        self.topRow.pack(side=TOP)
 
-def screens(conn):
-    root = Tk()
+        self.bottomRow = Frame(self.mainFrame, height=200, width=600)
+        self.bottomRow.pack(side=BOTTOM)
 
-    mainFrame = Frame(root, height= 400, width=600)
-    mainFrame.pack()
+        self.leftTopFrame = Frame(self.topRow, height=200, width=300, bg="red")
+        self.leftTopFrame.pack(side=LEFT)
 
-    topRow = Frame(mainFrame, height=200, width=600)
-    topRow.pack(side=TOP)
+        self.rightTopFrame = Frame(self.topRow, height=200, width=300)
+        self.rightTopFrame.pack(side=RIGHT)
 
-    bottomRow  = Frame(mainFrame, height=200, width=600)
-    bottomRow.pack(side=BOTTOM)
+        self.leftBottomFrame = Frame(self.bottomRow, height=200, width=300)
+        self.leftBottomFrame.pack(side=LEFT)
 
-    leftTopFrame = Frame(topRow, height=200, width=300, bg="red")
-    leftTopFrame.pack(side=LEFT)
+        self.rightBottomFrame = Frame(self.bottomRow, height=200, width=300)
+        self.rightBottomFrame.pack(side=RIGHT)
 
-    rightTopFrame = Frame(topRow, height=200, width=300)
-    rightTopFrame.pack(side=RIGHT)
+        self.root.mainloop()
 
-    leftBottomFrame = Frame(bottomRow, height=200, width=300)
-    leftBottomFrame.pack(side=LEFT)
+    def labels_in_screen(self):
 
-    rightBottomFrame = Frame(bottomRow, height=200, width=300)
-    rightBottomFrame.pack(side=RIGHT)
+        do_rows = do_cat(self.conn)
+        for element in do_rows:
+            Label(self.leftTopFrame, text=element, fg="black")
+        dec_rows = dec_cat(self.conn)
+        for element in dec_rows:
+            Label(self.rightTopFrame, text=element, fg="black")
+        dlg_rows = dlg_cat(self.conn)
+        for element in dlg_rows:
+            Label(self.leftBottomFrame, text=element, fg="black")
+        del_rows = del_cat(self.conn)
+        for element in del_rows:
+            Label(self.rightBottomFrame, text=element, fg="black")
 
-    labels_in_screen(conn, leftTopFrame, rightTopFrame, leftBottomFrame, rightBottomFrame)
+    def screens(self):
 
-    root.mainloop()
+        self.labels_in_screen()
 
 
 if __name__ == "__main__":
     connection = create_connection(r"D:\eisen-tickets\assets\tickets.db")
-    screens(connection)
-
-
+    four_windows = windows(connection)
