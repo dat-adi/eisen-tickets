@@ -1,4 +1,5 @@
 from tkinter import *
+from modules.display_ticket_info_tk import ticket_retriever
 from modules.create_db_components import create_connection
 
 
@@ -52,7 +53,7 @@ class windows:
         self.bottomRow = Frame(self.mainFrame, height=200, width=600)
         self.bottomRow.pack(side=BOTTOM)
 
-        self.leftTopFrame = Frame(self.topRow, height=200, width=300, bg="red")
+        self.leftTopFrame = Frame(self.topRow, height=200, width=300)
         self.leftTopFrame.pack(side=LEFT)
 
         self.rightTopFrame = Frame(self.topRow, height=200, width=300)
@@ -64,22 +65,26 @@ class windows:
         self.rightBottomFrame = Frame(self.bottomRow, height=200, width=300)
         self.rightBottomFrame.pack(side=RIGHT)
 
+        self.labels_in_screen()
+        self.frames = {}
+
+
         self.root.mainloop()
 
     def labels_in_screen(self):
 
         do_rows = do_cat(self.conn)
         for element in do_rows:
-            Label(self.leftTopFrame, text=element, fg="black")
+            Button(self.leftTopFrame, text=element[3], fg="black", command=ticket_retriever(element)).pack()
         dec_rows = dec_cat(self.conn)
         for element in dec_rows:
-            Label(self.rightTopFrame, text=element, fg="black")
+            Button(self.rightTopFrame, text=element[3], fg="black", command=ticket_retriever(element)).pack()
         dlg_rows = dlg_cat(self.conn)
         for element in dlg_rows:
-            Label(self.leftBottomFrame, text=element, fg="black")
+            Button(self.leftBottomFrame, text=element[3], fg="black", command=ticket_retriever(element)).pack()
         del_rows = del_cat(self.conn)
         for element in del_rows:
-            Label(self.rightBottomFrame, text=element, fg="black")
+            Button(self.rightBottomFrame, text=element[3], fg="black", command=ticket_retriever(element)).pack()
 
     def screens(self):
 

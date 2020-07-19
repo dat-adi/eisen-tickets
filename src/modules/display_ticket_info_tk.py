@@ -25,10 +25,11 @@ class display_ticket:
 
         self.root.mainloop()
 
+
 def ticket_retriever(ticket):
     display_ticket(ticket).tkinter_display()
 
 
 if __name__ == "__main__":
-    ticket = (1, "23/34/12", "DO", "something", "random text alsdnf alskdf ;lasmdflknasldfnasndflknaskdnfkansdlkfjaknsdjf")
-    ticket_retriever(ticket)
+    tick = (1, "23/34/12", "DO", "something", "random text alsdnf alskdf ;lasmdflknasldfnasndflknaskdnfkansdlkfjaknsdjf")
+    ticket_retriever(tick)
