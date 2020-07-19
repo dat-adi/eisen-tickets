@@ -1,52 +1,57 @@
 from tkinter import *
 from modules.create_db_components import create_connection
 
+
 def do_cat(conn):
     cur = conn.cursor()
-    cur.execute("SELECT * FROM tickets WHERE category = DO")
+    cur.execute('SELECT * FROM tickets WHERE category = "DO"')
     conn.commit()
     rows = cur.fetchall()
 
     return rows
+
 
 def dec_cat(conn):
     cur = conn.cursor()
-    cur.execute("SELECT * FROM tickets WHERE category = DEC")
+    cur.execute('SELECT * FROM tickets WHERE category = "DEC"')
     conn.commit()
     rows = cur.fetchall()
 
     return rows
+
 
 def dlg_cat(conn):
     cur = conn.cursor()
-    cur.execute("SELECT * FROM tickets WHERE category = DLG")
+    cur.execute('SELECT * FROM tickets WHERE category = "DLG"')
     conn.commit()
     rows = cur.fetchall()
 
     return rows
+
 
 def del_cat(conn):
     cur = conn.cursor()
-    cur.execute("SELECT * FROM tickets WHERE category = DEL")
+    cur.execute('SELECT * FROM tickets WHERE category = "DEL"')
     conn.commit()
     rows = cur.fetchall()
 
     return rows
+
 
 def labels_in_screen(conn, ltf, rtf, lbf, rbf):
 
     do_rows = do_cat(conn)
     for element in do_rows:
-        Label(ltf, text=element)
+        Label(ltf, text=element, fg="black")
     dec_rows = dec_cat(conn)
     for element in dec_rows:
-        Label(rtf, text=element)
+        Label(rtf, text=element, fg="black")
     dlg_rows = dlg_cat(conn)
     for element in dlg_rows:
-        Label(lbf, text=element)
+        Label(lbf, text=element, fg="black")
     del_rows = del_cat(conn)
     for element in del_rows:
-        Label(rbf, text=element)
+        Label(rbf, text=element, fg="black")
 
 
 def screens(conn):
@@ -76,6 +81,7 @@ def screens(conn):
     labels_in_screen(conn, leftTopFrame, rightTopFrame, leftBottomFrame, rightBottomFrame)
 
     root.mainloop()
+
 
 if __name__ == "__main__":
     connection = create_connection(r"D:\eisen-tickets\assets\tickets.db")
