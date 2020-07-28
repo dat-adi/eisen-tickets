@@ -66,13 +66,10 @@ class windows:
         self.rightBottomFrame.pack(side=RIGHT)
 
         self.labels_in_screen()
-        self.frames = {}
-
 
         self.root.mainloop()
 
     def labels_in_screen(self):
-
         do_rows = do_cat(self.conn)
         for element in do_rows:
             Button(self.leftTopFrame, text=element[3], fg="black", command=ticket_retriever(element)).pack()
@@ -87,7 +84,6 @@ class windows:
             Button(self.rightBottomFrame, text=element[3], fg="black", command=ticket_retriever(element)).pack()
 
     def screens(self):
-
         self.labels_in_screen()
 
 
