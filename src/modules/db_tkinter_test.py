@@ -52,7 +52,7 @@ class windows(tk.Tk):
 
         self.frames = {}
         for F in (MainPage, DoPage, DecPage, DlgPage, DelPage):
-            frame = F(container, self)
+            frame = F(container, self, self.conn)
 
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -65,8 +65,9 @@ class windows(tk.Tk):
 
 
 class MainPage(tk.Frame):
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
+        self.conn = conn
         label = tk.Label(self, text="Start Page")
         label.pack(padx=10, pady=10)
 
@@ -81,10 +82,14 @@ class MainPage(tk.Frame):
 
 
 class DoPage(tk.Frame):
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
         label = tk.Label(self, text="Eisen's Do Page")
         label.pack(padx=10, pady=10)
+
+        do_rows = do_cat(conn)
+        for element in do_rows:
+            tk.Button(self, text=element[3], fg="black").pack(fill=tk.X)
 
         dec_button = tk.Button(self, text="Eisen Decide", command=lambda: controller.show_frame(DecPage))
         dec_button.pack(fill=tk.X)
@@ -97,10 +102,14 @@ class DoPage(tk.Frame):
 
 
 class DecPage(tk.Frame):
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
         label = tk.Label(self, text="Eisen's Decide Page")
         label.pack(padx=10, pady=10)
+
+        dec_rows = dec_cat(conn)
+        for element in dec_rows:
+            tk.Button(self, text=element[3], fg="black").pack(fill=tk.X)
 
         do_button = tk.Button(self, text="Eisen Do", command=lambda: controller.show_frame(DoPage))
         do_button.pack(fill=tk.X)
@@ -113,10 +122,14 @@ class DecPage(tk.Frame):
 
 
 class DlgPage(tk.Frame):
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
         label = tk.Label(self, text="Eisen's Delegate Page")
         label.pack(padx=10, pady=10)
+
+        dlg_rows = dlg_cat(conn)
+        for element in dlg_rows:
+            tk.Button(self, text=element[3], fg="black").pack(fill=tk.X)
 
         do_button = tk.Button(self, text="Eisen Do", command=lambda: controller.show_frame(DoPage))
         do_button.pack(fill=tk.X)
@@ -129,10 +142,14 @@ class DlgPage(tk.Frame):
 
 
 class DelPage(tk.Frame):
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
         label = tk.Label(self, text="Eisen's Delete Page")
         label.pack(padx=10, pady=10)
+
+        del_rows = del_cat(conn)
+        for element in del_rows:
+            tk.Button(self, text=element[3], fg="black").pack(fill=tk.X)
 
         do_button = tk.Button(self, text="Eisen Do", command=lambda: controller.show_frame(DoPage))
         do_button.pack(fill=tk.X)
