@@ -1,4 +1,4 @@
-from tkinter import *
+import tkinter as tk
 from modules.display_ticket_info_tk import ticket_retriever
 from modules.create_db_components import create_connection
 
@@ -39,54 +39,112 @@ def del_cat(conn):
     return rows
 
 
-class windows:
-    def __init__(self, conn):
-        self.root = Tk()
+class windows(tk.Tk):
+    def __init__(self, conn, *args, **kwargs):
+        tk.Tk.__init__(self, *args, **kwargs)
         self.conn = conn
 
-        self.mainFrame = Frame(self.root, height=400, width=600)
-        self.mainFrame.pack()
+        container = tk.Frame(self, height=400, width=600)
+        container.pack(side="top", fill="both", expand=True)
 
-        self.topRow = Frame(self.mainFrame, height=200, width=600)
-        self.topRow.pack(side=TOP)
+        container.grid_rowconfigure(0, weight=1)
+        container.grid_columnconfigure(0, weight=1)
 
-        self.bottomRow = Frame(self.mainFrame, height=200, width=600)
-        self.bottomRow.pack(side=BOTTOM)
+        self.frames = {}
+        for F in (MainPage, DoPage, DecPage, DlgPage, DelPage):
+            frame = F(container, self)
 
-        self.leftTopFrame = Frame(self.topRow, height=200, width=300)
-        self.leftTopFrame.pack(side=LEFT)
+            self.frames[F] = frame
+            frame.grid(row=0, column=0, sticky="nsew")
 
-        self.rightTopFrame = Frame(self.topRow, height=200, width=300)
-        self.rightTopFrame.pack(side=RIGHT)
+        self.show_frame(MainPage)
 
-        self.leftBottomFrame = Frame(self.bottomRow, height=200, width=300)
-        self.leftBottomFrame.pack(side=LEFT)
+    def show_frame(self, cont):
+        frame = self.frames[cont]
+        frame.tkraise()
 
-        self.rightBottomFrame = Frame(self.bottomRow, height=200, width=300)
-        self.rightBottomFrame.pack(side=RIGHT)
 
-        self.labels_in_screen()
+class MainPage(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Start Page")
+        label.pack(padx=10, pady=10)
 
-        self.root.mainloop()
+        do_button = tk.Button(self, text="Eisen Do", command=lambda: controller.show_frame(DoPage))
+        do_button.pack(fill=tk.X)
+        dec_button = tk.Button(self, text="Eisen Decide", command=lambda: controller.show_frame(DecPage))
+        dec_button.pack(fill=tk.X)
+        dlg_button = tk.Button(self, text="Eisen Delegate", command=lambda: controller.show_frame(DlgPage))
+        dlg_button.pack(fill=tk.X)
+        del_button = tk.Button(self, text="Eisen Delete", command=lambda: controller.show_frame(DelPage))
+        del_button.pack(fill=tk.X)
 
-    def labels_in_screen(self):
-        do_rows = do_cat(self.conn)
-        for element in do_rows:
-            Button(self.leftTopFrame, text=element[3], fg="black", command=ticket_retriever(element)).pack()
-        dec_rows = dec_cat(self.conn)
-        for element in dec_rows:
-            Button(self.rightTopFrame, text=element[3], fg="black", command=ticket_retriever(element)).pack()
-        dlg_rows = dlg_cat(self.conn)
-        for element in dlg_rows:
-            Button(self.leftBottomFrame, text=element[3], fg="black", command=ticket_retriever(element)).pack()
-        del_rows = del_cat(self.conn)
-        for element in del_rows:
-            Button(self.rightBottomFrame, text=element[3], fg="black", command=ticket_retriever(element)).pack()
 
-    def screens(self):
-        self.labels_in_screen()
+class DoPage(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Eisen's Do Page")
+        label.pack(padx=10, pady=10)
+
+        dec_button = tk.Button(self, text="Eisen Decide", command=lambda: controller.show_frame(DecPage))
+        dec_button.pack(fill=tk.X)
+        dlg_button = tk.Button(self, text="Eisen Delegate", command=lambda: controller.show_frame(DlgPage))
+        dlg_button.pack(fill=tk.X)
+        del_button = tk.Button(self, text="Eisen Delete", command=lambda: controller.show_frame(DelPage))
+        del_button.pack(fill=tk.X)
+        main_button = tk.Button(self, text="Return to main page", command=lambda: controller.show_frame(MainPage))
+        main_button.pack(side="bottom", fill=tk.X)
+
+
+class DecPage(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Eisen's Decide Page")
+        label.pack(padx=10, pady=10)
+
+        do_button = tk.Button(self, text="Eisen Do", command=lambda: controller.show_frame(DoPage))
+        do_button.pack(fill=tk.X)
+        dlg_button = tk.Button(self, text="Eisen Delegate", command=lambda: controller.show_frame(DlgPage))
+        dlg_button.pack(fill=tk.X)
+        del_button = tk.Button(self, text="Eisen Delete", command=lambda: controller.show_frame(DelPage))
+        del_button.pack(fill=tk.X)
+        main_button = tk.Button(self, text="Return to main page", command=lambda: controller.show_frame(MainPage))
+        main_button.pack(side="bottom", fill=tk.X)
+
+
+class DlgPage(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Eisen's Delegate Page")
+        label.pack(padx=10, pady=10)
+
+        do_button = tk.Button(self, text="Eisen Do", command=lambda: controller.show_frame(DoPage))
+        do_button.pack(fill=tk.X)
+        dec_button = tk.Button(self, text="Eisen Decide", command=lambda: controller.show_frame(DecPage))
+        dec_button.pack(fill=tk.X)
+        del_button = tk.Button(self, text="Eisen Delete", command=lambda: controller.show_frame(DelPage))
+        del_button.pack(fill=tk.X)
+        main_button = tk.Button(self, text="Return to main page", command=lambda: controller.show_frame(MainPage))
+        main_button.pack(side="bottom", fill=tk.X)
+
+
+class DelPage(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Eisen's Delete Page")
+        label.pack(padx=10, pady=10)
+
+        do_button = tk.Button(self, text="Eisen Do", command=lambda: controller.show_frame(DoPage))
+        do_button.pack(fill=tk.X)
+        dec_button = tk.Button(self, text="Eisen Decide", command=lambda: controller.show_frame(DecPage))
+        dec_button.pack(fill=tk.X)
+        dlg_button = tk.Button(self, text="Eisen Delegate", command=lambda: controller.show_frame(DlgPage))
+        dlg_button.pack(fill=tk.X)
+        main_button = tk.Button(self, text="Return to main page", command=lambda: controller.show_frame(MainPage))
+        main_button.pack(side="bottom", fill=tk.X)
 
 
 if __name__ == "__main__":
     connection = create_connection(r"D:\eisen-tickets\assets\tickets.db")
     four_windows = windows(connection)
+    four_windows.mainloop()
