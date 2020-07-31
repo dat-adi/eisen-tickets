@@ -66,7 +66,7 @@ class windows(tk.Tk):
     def __init__(self, conn, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
         self.wm_title("Eisen's Tickets")
-        self.iconbitmap("../../assets/logo.bmp")
+        self.iconbitmap(self, default="../../assets/logo.ico")
         self.conn = conn
 
         container = tk.Frame(self, height=400, width=600)
