@@ -146,7 +146,7 @@ class DoPage(tk.Frame):
         do_rows = do_cat(conn)
         for element in do_rows:
             tk.Button(self, text=element[3], fg="black",
-                      command=lambda: controller.ticket_display(element)).pack(fill=tk.X)
+                      command=lambda ele=element: controller.ticket_display(ele)).pack(fill=tk.X)
 
         eisen_display_button = ttk.Button(self, text="Display Selection",
                                           command=lambda: controller.show_frame(EisenDisplay))
@@ -164,7 +164,7 @@ class DecPage(tk.Frame):
         dec_rows = dec_cat(conn)
         for element in dec_rows:
             tk.Button(self, text=element[3], fg="black",
-                      command=lambda: controller.ticket_display(element)).pack(fill=tk.X)
+                      command=lambda ele=element: controller.ticket_display(ele)).pack(fill=tk.X)
 
         eisen_display_button = ttk.Button(self, text="Display Selection",
                                           command=lambda: controller.show_frame(EisenDisplay))
@@ -182,7 +182,7 @@ class DlgPage(tk.Frame):
         dlg_rows = dlg_cat(conn)
         for element in dlg_rows:
             tk.Button(self, text=element[3], fg="black",
-                      command=lambda: controller.ticket_display(element)).pack(fill=tk.X)
+                      command=lambda ele=element: controller.ticket_display(ele)).pack(fill=tk.X)
 
         eisen_display_button = ttk.Button(self, text="Display Selection",
                                           command=lambda: controller.show_frame(EisenDisplay))
@@ -200,7 +200,7 @@ class DelPage(tk.Frame):
         del_rows = del_cat(conn)
         for element in del_rows:
             tk.Button(self, text=element[3], fg="black",
-                      command=lambda: controller.ticket_display(element)).pack(fill=tk.X)
+                      command=lambda ele=element: controller.ticket_display(ele)).pack(fill=tk.X)
 
         eisen_display_button = ttk.Button(self, text="Display Selection",
                                           command=lambda: controller.show_frame(EisenDisplay))
