@@ -21,7 +21,7 @@ __maintainer__ = "Datta Adithya"
 __email__ = "dat.adithya@gmail.com"
 
 # fonts for the project
-vfont = ("Helvetica", 12)
+text_font = ("Helvetica", 12)
 
 
 # functions to retrieve all of the records from the database
@@ -88,13 +88,29 @@ class windows(tk.Tk):
         frame = self.frames[cont]
         frame.tkraise()
 
+    def ticket_display(self, ticket):
+        new_window = tk.Toplevel(self)
+        ticket_id = ticket[0]
+        timestamp = ticket[1]
+        category = ticket[2]
+        task = ticket[3]
+        more_info = ticket[4]
+        fields = ['Ticket ID', 'Timestamp', 'Category', 'Task', 'More Info']
+        details = [ticket_id, timestamp, category, task, more_info]
+
+        r = 0
+        for field in fields:
+            tk.Label(new_window, text=field, relief=tk.RIDGE, width=15).grid(row=r, column=0)
+            tk.Label(new_window, text=details[r], relief=tk.SUNKEN, width=100).grid(row=r, column=1)
+            r += 1
+
 
 # Pages made for navigation through the different categories
 class MainPage(tk.Frame):
     def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
         self.conn = conn
-        label = tk.Label(self, text="Start Page", font=vfont)
+        label = tk.Label(self, text="Start Page", font=text_font)
         label.pack(padx=10, pady=10)
 
         eisen_display_button = ttk.Button(self, text="Display Selection",
@@ -106,7 +122,7 @@ class EisenDisplay(tk.Frame):
     def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
         self.conn = conn
-        label = tk.Label(self, text="Eisen Display", font=vfont)
+        label = tk.Label(self, text="Eisen Display", font=text_font)
         label.pack(padx=10, pady=10)
 
         main_button = ttk.Button(self, text="Return to main page", command=lambda: controller.show_frame(MainPage))
@@ -124,12 +140,13 @@ class EisenDisplay(tk.Frame):
 class DoPage(tk.Frame):
     def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Eisen's Do Page", font=vfont)
+        label = tk.Label(self, text="Eisen's Do Page", font=text_font)
         label.pack(padx=10, pady=10)
 
         do_rows = do_cat(conn)
         for element in do_rows:
-            tk.Button(self, text=element[3], fg="black").pack(fill=tk.X)
+            tk.Button(self, text=element[3], fg="black",
+                      command=lambda: controller.ticket_display(element)).pack(fill=tk.X)
 
         eisen_display_button = ttk.Button(self, text="Display Selection",
                                           command=lambda: controller.show_frame(EisenDisplay))
@@ -141,12 +158,13 @@ class DoPage(tk.Frame):
 class DecPage(tk.Frame):
     def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Eisen's Decide Page", font=vfont)
+        label = tk.Label(self, text="Eisen's Decide Page", font=text_font)
         label.pack(padx=10, pady=10)
 
         dec_rows = dec_cat(conn)
         for element in dec_rows:
-            tk.Button(self, text=element[3], fg="black").pack(fill=tk.X)
+            tk.Button(self, text=element[3], fg="black",
+                      command=lambda: controller.ticket_display(element)).pack(fill=tk.X)
 
         eisen_display_button = ttk.Button(self, text="Display Selection",
                                           command=lambda: controller.show_frame(EisenDisplay))
@@ -158,12 +176,13 @@ class DecPage(tk.Frame):
 class DlgPage(tk.Frame):
     def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Eisen's Delegate Page", font=vfont)
+        label = tk.Label(self, text="Eisen's Delegate Page", font=text_font)
         label.pack(padx=10, pady=10)
 
         dlg_rows = dlg_cat(conn)
         for element in dlg_rows:
-            tk.Button(self, text=element[3], fg="black").pack(fill=tk.X)
+            tk.Button(self, text=element[3], fg="black",
+                      command=lambda: controller.ticket_display(element)).pack(fill=tk.X)
 
         eisen_display_button = ttk.Button(self, text="Display Selection",
                                           command=lambda: controller.show_frame(EisenDisplay))
@@ -175,12 +194,13 @@ class DlgPage(tk.Frame):
 class DelPage(tk.Frame):
     def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Eisen's Delete Page", font=vfont)
+        label = tk.Label(self, text="Eisen's Delete Page", font=text_font)
         label.pack(padx=10, pady=10)
 
         del_rows = del_cat(conn)
         for element in del_rows:
-            tk.Button(self, text=element[3], fg="black").pack(fill=tk.X)
+            tk.Button(self, text=element[3], fg="black",
+                      command=lambda: controller.ticket_display(element)).pack(fill=tk.X)
 
         eisen_display_button = ttk.Button(self, text="Display Selection",
                                           command=lambda: controller.show_frame(EisenDisplay))
