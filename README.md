@@ -21,14 +21,34 @@ Having two categories, Urgency and Importance mixed, enables you to get a cleare
 understanding of which task to invest more time into.
 
 ## Installation
-The Eisen tickets can easily be brought into your system, just by simply dowloading one of the [releases](https://github.com/dat-adi/eisen-tickets/releases) or by cloning the repository,
+The Eisen tickets can easily be brought into your system, just by simply downloading one of the [releases](https://github.com/dat-adi/eisen-tickets/releases) or by cloning the repository,
 ```shell
 git clone https://github.com/dat-adi/eisen-tickets.git
 ```
 
-## How the eisen-tickets work
+## How Eisen's Tickets works
 The Eisen tickets works on the principle of a ticket based system, where each ticket has it's own 
 information, the time it was made, the category it belongs to in the eisenhower box, along with the task and it's contents.
+
+### Adding a ticket into the database
+Adding a ticket into the database is currently only supported in a command line format for now, and the GUI component is still underway.\
+However, it is pretty simple to add a ticket into the database as well.\
+Simply, go into the **src** folder and click on **main.py**, this will lead you to a command line interface.\
+The process is pretty simple to undergo, and needs you to simply enter the option 2 to add tickets into the database.
+
+Following each prompt and entering the required info helps you to essentially finish the task with close to no errors.
+In case, you do make an error, we will be releasing a release in which you can delete your tickets as well.
+
+### Displaying the tickets entered
+The Eisen's Tickets, as of now, has both a GUI and a CLI for display the required tickets.
+
+#### GUI
+The GUI feature of the Eisen's Tickets, can simply be utilized by directing yourself to the display_tickets.py in the modules folder.\
+And the rest of it is pretty evident, directing and leading you to see all the displayed tickets based on your selection.
+
+#### CLI
+The CLI feature can pretty much be accessed by the **main.py** file, and simply progressing through a selection of options.
+
 
 ## Contributing to eisen-tickets
 If you feel like there could be an improvement or a bug fix, that can be placed for the current status of the repository,
