@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
-from modules.create_db_components import create_connection
+from modules.create_db_components import insertion_row, create_connection
+from modules.db_ticket_maker import ticket_maker
 
 
 class windows(tk.Tk):
@@ -17,7 +18,7 @@ class windows(tk.Tk):
         container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        for F in (MainPage, TicketAdd):
+        for F in (MainPage, TicketAdd, CompletionScreen):
             frame = F(container, self, self.conn)
 
             self.frames[F] = frame
@@ -41,6 +42,11 @@ class MainPage(tk.Frame):
         switch_window_button.pack(side="bottom", fill=tk.X)
 
 
+def ticket_insertion(conn, cat_entry, task_entry, more_info_entry):
+    ticket = ticket_maker(cat_entry.get(), task_entry.get(), more_info_entry.get()).return_ticket_info()
+    insertion_row(conn, ticket)
+
+
 class TicketAdd(tk.Frame):
     def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
@@ -61,11 +67,21 @@ class TicketAdd(tk.Frame):
         more_info_entry = ttk.Entry(self)
         more_info_entry.grid(row=2, column=1)
 
-        ticket_details = [cat_entry.get(), task_entry.get(), more_info_entry.get()]
-        print(ticket_details)
+        switch_window_button = tk.Button(self, text="Cancel", command=lambda: controller.show_frame(MainPage))
+        switch_window_button.grid(row=5, column=0)
+        submit_button = tk.Button(self, text="Submit",
+                                  command=lambda: [ticket_insertion(self.conn, cat_entry, task_entry, more_info_entry),
+                                                   controller.show_frame(CompletionScreen)])
+        submit_button.grid(row=5, column=1)
 
-        switch_window_button = tk.Button(self, text="Add a ticket", command=lambda: controller.show_frame(MainPage))
-        switch_window_button.grid(row=5, column=1)
+
+class CompletionScreen(tk.Frame):
+    def __init__(self, parent, controller, conn):
+        tk.Frame.__init__(self, parent)
+        self.conn = conn
+        tk.Label(self, text="Ticket Added Successfully.").pack(padx=10, pady=10)
+        switch_window_button = ttk.Button(self, text="Return to menu", command=lambda: controller.show_frame(MainPage))
+        switch_window_button.pack(side="bottom", fill=tk.X)
 
 
 if __name__ == '__main__':
