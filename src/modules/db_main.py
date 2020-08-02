@@ -1,7 +1,27 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Inserting into, connecting, and creating a database
 from modules.create_db_components import insertion_row, create_connection, create_table
+
+# Selection screen for creating the type of ticket you wish to
 from modules.db_ticket_maker import selection
+
+# Simple print to explain the options provided
 from modules.db_option_screen import option_screen
+
+# Displaying information for each category
 from modules.db_display import display_info_category, display_info
+
+
+'''This module is used as an interface for the CLI users.'''
+
+# Owned
+__author__ = "Datta Adithya"
+__credits__ = ["Datta Adithya"]
+__license__ = "MIT"
+__maintainer__ = "Datta Adithya"
+__email__ = "dat.adithya@gmail.com"
 
 
 def table_initialization():

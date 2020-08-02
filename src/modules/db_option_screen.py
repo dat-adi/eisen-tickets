@@ -1,3 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"""This module is used to display options for the CLI user."""
+
+# Owned
+__author__ = "Datta Adithya"
+__credits__ = ["Datta Adithya"]
+__license__ = "MIT"
+__maintainer__ = "Datta Adithya"
+__email__ = "dat.adithya@gmail.com"
+
 
 def option_screen():
     print("Pick one of the options below to proceed further.")
@@ -17,3 +29,7 @@ def option_screen():
         return int(input("Enter option : "))
     elif choice == 2:
         return 6
+
+
+if __name__ == '__main__':
+    option_screen()

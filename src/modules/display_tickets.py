@@ -9,6 +9,8 @@ from tkinter import ttk
 
 # Database connection
 from modules.create_db_components import create_connection
+
+# Deletes the ticket from the database
 from modules.removing_tickets import delete_ticket
 
 '''This module is used to display all the tickets present in the 

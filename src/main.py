@@ -1,4 +1,18 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Directs to the db_main where it connects to the database and displays info.
 from modules.db_main import table_initialization
+
+'''This piece of code acts as the hub for CLI users.'''
+
+# Owned
+__author__ = "Datta Adithya"
+__credits__ = ["Datta Adithya"]
+__license__ = "MIT"
+__maintainer__ = "Datta Adithya"
+__email__ = "dat.adithya@gmail.com"
+
 
 if __name__ == "__main__":
 

@@ -1,7 +1,27 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# GUI import
 import tkinter as tk
+
+# Styling the GUI
 from tkinter import ttk
+
+# Connecting, creating, and inserting into a database
 from modules.create_db_components import insertion_row, create_connection, create_table
+
+# Creating a ticket
 from modules.db_ticket_maker import ticket_maker
+
+
+'''This module is used to add new tickets into the database.'''
+
+# Owned
+__author__ = "Datta Adithya"
+__credits__ = ["Datta Adithya"]
+__license__ = "MIT"
+__maintainer__ = "Datta Adithya"
+__email__ = "dat.adithya@gmail.com"
 
 
 class windows(tk.Tk):
