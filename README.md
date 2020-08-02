@@ -54,5 +54,7 @@ The CLI feature can pretty much be accessed by the **main.py** file, and simply 
 If you feel like there could be an improvement or a bug fix, that can be placed for the current status of the repository,
 feel free to browse through the [CONTRIBUTING.md](https://github.com/dat-adi/eisen-tickets/blob/master/CONTRIBUTING.md) in order to realise how to proceed with your contribution.
 
+Consider looking into the [Wiki](https://github.com/dat-adi/eisen-tickets/wiki) for Eisen's Tickets as well. It is updated from time to time, and explains the working of Eisen's Tickets and the components it uses.
+
 ---
 <p align="right"><i>dat-adi</i></p>
