@@ -9,6 +9,7 @@ from tkinter import ttk
 
 # Database connection
 from modules.create_db_components import create_connection
+from modules.removing_tickets import delete_ticket
 
 '''This module is used to display all the tickets present in the 
     Database.'''
@@ -103,6 +104,8 @@ class windows(tk.Tk):
             tk.Label(new_window, text=field, relief=tk.RIDGE, width=15).grid(row=r, column=0)
             tk.Label(new_window, text=details[r], relief=tk.SUNKEN, width=100).grid(row=r, column=1)
             r += 1
+        tk.Button(new_window, relief=tk.RIDGE, text="Delete Ticket", background="#FF3333",
+                  command=lambda: delete_ticket(self.conn, ticket_id)).grid(row=r, column=0, columnspan=2, sticky="ew")
 
 
 # Pages made for navigation through the different categories
