@@ -40,15 +40,13 @@ Following each prompt and entering the required info helps you to essentially fi
 In case, you do make an error, we will be releasing a release in which you can delete your tickets as well.
 
 ### Displaying the tickets entered
-The Eisen's Tickets, as of now, has both a GUI and a CLI for display the required tickets.
+The Eisen's Tickets, has both a GUI and a CLI feature leaving to the user to choose which mode to use.
 
 #### GUI
-The GUI feature of the Eisen's Tickets, can simply be utilized by directing yourself to the display_tickets.py in the modules folder.\
-And the rest of it is pretty evident, directing and leading you to see all the displayed tickets based on your selection.
+The GUI feature of the Eisen's Tickets, can simply be utilized by directing yourself to the display_tickets.py in the modules folder, to display the tickets and, the adding_tickets.py to add tickets into the database, and the rest of it is pretty evident, directing and leading you to see all the displayed tickets based on your selection.
 
 #### CLI
-The CLI feature can pretty much be accessed by the **main.py** file, and simply progressing through a selection of options.
-
+The CLI feature can pretty much be accessed by the **main.py** file, and simply progressing through a selection of options, allows you to view and add tickets to the database as well.
 
 ## Contributing to eisen-tickets
 If you feel like there could be an improvement or a bug fix, that can be placed for the current status of the repository,
