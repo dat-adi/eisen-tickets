@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from modules.create_db_components import insertion_row, create_connection
+from modules.create_db_components import insertion_row, create_connection, create_table
 from modules.db_ticket_maker import ticket_maker
 
 
@@ -10,6 +10,17 @@ class windows(tk.Tk):
         self.wm_title("Eisen's Tickets")
         self.iconbitmap(self, default="../../assets/logo.ico")
         self.conn = conn
+
+        create_sql_table = '''CREATE TABLE IF NOT EXISTS tickets (
+                                id integer PRIMARY KEY,
+                                timestamp text NOT NULL,
+                                category text NOT NULL,
+                                task text NOT NULL,
+                                more_info text
+                            );'''
+
+        if conn is not None:
+            create_table(conn, create_sql_table)
 
         container = tk.Frame(self, height=400, width=600)
         container.pack(side="top", fill="both", expand=True)
