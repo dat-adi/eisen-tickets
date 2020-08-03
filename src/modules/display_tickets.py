@@ -5,7 +5,7 @@
 import tkinter as tk
 
 # Styling the GUI
-from tkinter import ttk
+from tkinter import ttk, messagebox
 
 # Database connection
 from modules.create_db_components import create_connection
@@ -71,6 +71,7 @@ class windows(tk.Tk):
         self.wm_title("Eisen's Tickets")
         self.iconbitmap(self, default="../../assets/logo.ico")
         self.conn = conn
+        self.confirm = None
 
         container = tk.Frame(self, height=400, width=600)
         container.pack(side="top", fill="both", expand=True)
@@ -107,7 +108,29 @@ class windows(tk.Tk):
             tk.Label(new_window, text=details[r], relief=tk.SUNKEN, width=100).grid(row=r, column=1)
             r += 1
         tk.Button(new_window, relief=tk.RIDGE, text="Delete Ticket", background="#FF3333",
-                  command=lambda: delete_ticket(self.conn, ticket_id)).grid(row=r, column=0, columnspan=2, sticky="ew")
+                  command=lambda: tk_alert_box().grid(row=r, column=0, columnspan=2, sticky="ew")
+
+    def tk_alert_box(self):
+        alert_window = tk.Toplevel(self)
+
+        alert_window.wm_geometry("300x50")
+        tk.Label(master=alert_window, text="You will be deleting a ticket, do you wish to continue?").pack()
+        true_button = tk.Button(alert_window, text="Continue",
+                                command=lambda: [delete_ticket(self.conn, ticket_id)), self.finish(True)])
+        false_button = tk.Button(alert_window, text="Cancel",
+                                 command=lambda: self.finish(False))
+
+        true_button.pack(side=tk.RIGHT, padx=10)
+        false_button.pack(side=tk.LEFT, padx=10)
+
+        return self.value
+
+    def finish_true(self):
+        self.destroy()
+
+    def finish(self, value):
+        print(value)
+        self.destroy()
 
 
 # Pages made for navigation through the different categories
