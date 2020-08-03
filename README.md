@@ -9,7 +9,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/dat-adi/eisen-tickets.svg?style=for-the-badge&logo=appveyor)](https://github.com/dat-adi/eisen-tickets/issues)
 [![GitHub license](https://img.shields.io/github/license/dat-adi/eisen-tickets.svg?style=for-the-badge&logo=appveyor)](https://github.com/dat-adi/eisen-tickets/blob/master/LICENSE)
 [![GitHub repo size](https://img.shields.io/github/repo-size/dat-adi/eisen-tickets.svg?style=for-the-badge&logo=appveyor)](https://github.com/dat-adi/eisen-tickets)
-[![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=for-the-badge&logo=appveyor)](https://github.com/dat-adi/eisen-tickets/blob/master/.github/CODE_OF_CONDUCT.md)
+[![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=for-the-badge&logo=appveyor)](https://github.com/dat-adi/eisen-tickets/blob/master/CODE_OF_CONDUCT.md)
 
 ---
 
