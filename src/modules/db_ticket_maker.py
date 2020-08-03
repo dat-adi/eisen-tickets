@@ -1,4 +1,17 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Adding datetime for ticket info
 from datetime import datetime as dt
+
+'''This module is used to create new tickets which will be added into the database.'''
+
+# Owned
+__author__ = "Datta Adithya"
+__credits__ = ["Datta Adithya"]
+__license__ = "MIT"
+__maintainer__ = "Datta Adithya"
+__email__ = "dat.adithya@gmail.com"
 
 
 class ticket_maker:
@@ -42,3 +55,12 @@ def selection():
     category = categories[category_number-1]
     print("[INFO] Ticket Created...\n")
     return ticket_maker(category, task, more_info).return_ticket_info()
+
+
+if __name__ == '__main__':
+    sample_ticket = selection()
+    fields = ["timestamp", "category", "task", "more info"]
+    r = 0
+    for i in fields:
+        print(i + " : " + str(sample_ticket[r]))
+        r += 1

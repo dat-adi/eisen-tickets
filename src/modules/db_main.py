@@ -1,7 +1,49 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Inserting into, connecting, and creating a database
 from modules.create_db_components import insertion_row, create_connection, create_table
+
+# Selection screen for creating the type of ticket you wish to
 from modules.db_ticket_maker import selection
+
+# Simple print to explain the options provided
 from modules.db_option_screen import option_screen
+
+# Displaying information for each category
 from modules.db_display import display_info_category, display_info
+
+# Removing a ticket from the database
+from modules.removing_tickets import delete_ticket
+
+
+'''This module is used as an interface for the CLI users.'''
+
+# Owned
+__author__ = "Datta Adithya"
+__credits__ = ["Datta Adithya"]
+__license__ = "MIT"
+__maintainer__ = "Datta Adithya"
+__email__ = "dat.adithya@gmail.com"
+
+
+def addition_ticket(conn):
+    while True:
+        ticket = selection()
+        insertion_row(conn, ticket)
+        print("Adding Ticket to Eisen's Tickets...")
+        if input("Do you wish to continue adding entries? (y/n) : ") == 'n':
+            break
+
+
+def remove_ticket(conn):
+    while True:
+        display_info(conn)
+        ticket_id = int(input("Enter the ticket id of the ticket you wish to delete : "))
+        delete_ticket(conn, ticket_id)
+        print("Removing the ticket from Eisen's Tickets...")
+        if input("Do you wish to continue removing tickets? (y/n) : ") == 'n':
+            break
 
 
 def table_initialization():
@@ -27,12 +69,9 @@ def table_initialization():
         elif response == 5:
             display_info(conn)
         elif response == 6:
-            while True:
-                ticket = selection()
-                insertion_row(conn, ticket)
-                print("Adding Ticket to Eisen's Tickets...")
-                if input("Do you wish to continue adding entries? (y/n) : ") == 'n':
-                    break
+            addition_ticket(conn)
+        elif response == 7:
+            remove_ticket(conn)
 
 
 if __name__ == "__main__":

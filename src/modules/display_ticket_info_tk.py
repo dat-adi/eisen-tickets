@@ -1,4 +1,17 @@
-from tkinter import *
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Loading in GUI components for the ticket info to be displayed.
+from tkinter import Label, RIDGE, SUNKEN, Tk
+
+'''This module is used to display the tickets in a tkinter grid format.'''
+
+# Owned
+__author__ = "Datta Adithya"
+__credits__ = ["Datta Adithya"]
+__license__ = "MIT"
+__maintainer__ = "Datta Adithya"
+__email__ = "dat.adithya@gmail.com"
 
 
 class display_ticket:
@@ -30,5 +43,5 @@ def ticket_retriever(ticket):
 
 
 if __name__ == "__main__":
-    tick = (1, "23/34/12", "DO", "something", "random text alsdnf alskdf ;lasmdflknasldfnasndflknaskdnfkansdlkfjaknsdjf")
+    tick = (1, "23/34/12", "DO", "something", "random text lul")
     ticket_retriever(tick)

@@ -1,4 +1,18 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Connecting to the database
 from modules.create_db_components import create_connection
+
+
+'''This module is used to display ticket information from the database.'''
+
+# Owned
+__author__ = "Datta Adithya"
+__credits__ = ["Datta Adithya"]
+__license__ = "MIT"
+__maintainer__ = "Datta Adithya"
+__email__ = "dat.adithya@gmail.com"
 
 
 def display_info(conn):
