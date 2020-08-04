@@ -26,13 +26,14 @@ def file_exist(file_location):
     return False
 
 
-def location_retrieval():
+def location_file_text():
     path_to_db = Path(__file__).parent
+    file_location = '../../assets/db_location.txt'
+    return str((path_to_db / file_location).resolve())
 
-    assets_parent = '../../assets/'
 
-    file_location = assets_parent + 'db_location.txt'
-    file_location = str((path_to_db / file_location).resolve())
+def location_retrieval():
+    file_location = location_file_text()
     if file_exist(file_location):
         with open(file_location, 'r') as f:
             db_path = f.read()

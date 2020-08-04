@@ -16,6 +16,8 @@ from modules.db_display import display_info_category, display_info
 # Removing a ticket from the database
 from modules.removing_tickets import delete_ticket
 
+# Finding out the location of the database from db_location.txt
+from modules.location_designator import location_retrieval
 
 '''This module is used as an interface for the CLI users.'''
 
@@ -47,7 +49,8 @@ def remove_ticket(conn):
 
 
 def table_initialization():
-    conn = create_connection(r"D:\eisen-tickets\assets\tickets.db")
+    db_loc = location_retrieval()
+    conn = create_connection(db_loc)
     create_sql_table = '''CREATE TABLE IF NOT EXISTS tickets (
                             id integer PRIMARY KEY,
                             timestamp text NOT NULL,
