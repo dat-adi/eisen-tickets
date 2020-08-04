@@ -13,6 +13,9 @@ from modules.create_db_components import insertion_row, create_connection, creat
 # Creating a ticket
 from modules.db_ticket_maker import ticket_maker
 
+# GUI addition
+from modules.location_designator import location_gui_retrieval
+
 
 '''This module is used to add new tickets into the database.'''
 
@@ -116,5 +119,6 @@ class CompletionScreen(tk.Frame):
 
 
 if __name__ == '__main__':
-    test_window = windows(create_connection(r"D:\eisen-tickets\assets\tickets.db"))
+    db_conn = location_gui_retrieval()
+    test_window = windows(create_connection(db_conn))
     test_window.mainloop()

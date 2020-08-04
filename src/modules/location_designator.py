@@ -55,9 +55,19 @@ def location_retrieval():
 
 
 def location_gui_retrieval():
-    path = filedialog.askdirectory()
-    return path
+    file_location = location_file_text()
+    if file_exist(file_location):
+        with open(file_location, 'r') as f:
+            db_path = f.read()
+            f.close()
+            return db_path
+    path_to_db = filedialog.askdirectory()
+    path_to_db = path_to_db.replace('/', '\\') + "\\tickets.db"
+    with open(file_location, 'w') as f:
+        f.write(path_to_db)
+        f.close()
+    return path_to_db
 
 
 if __name__ == '__main__':
-    print(location_retrieval())
+    print(location_gui_retrieval())
