@@ -4,7 +4,7 @@
 # Loading in GUI components for the ticket info to be displayed.
 from tkinter import Label, RIDGE, SUNKEN, Tk
 
-'''This module is used to display the tickets in a tkinter grid format.'''
+"""This module is used to display the tickets in a tkinter grid format."""
 
 # Owned
 __author__ = "Datta Adithya"
@@ -21,8 +21,14 @@ class display_ticket:
         self.category = ticket[2]
         self.task = ticket[3]
         self.more_info = ticket[4]
-        self.fields = ['Ticket ID', 'Timestamp', 'Category', 'Task', 'More Info']
-        self.details = [self.id, self.timestamp, self.category, self.task, self.more_info]
+        self.fields = ["Ticket ID", "Timestamp", "Category", "Task", "More Info"]
+        self.details = [
+            self.id,
+            self.timestamp,
+            self.category,
+            self.task,
+            self.more_info,
+        ]
 
         self.root = Tk()
 

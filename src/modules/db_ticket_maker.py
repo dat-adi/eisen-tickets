@@ -4,7 +4,7 @@
 # Adding datetime for ticket info
 from datetime import datetime as dt
 
-'''This module is used to create new tickets which will be added into the database.'''
+"""This module is used to create new tickets which will be added into the database."""
 
 # Owned
 __author__ = "Datta Adithya"
@@ -41,7 +41,7 @@ class ticket_maker:
 
 def selection():
     print("Categories")
-    print("-"*10)
+    print("-" * 10)
 
     print("1. Do       - Urgent and Important")
     print("2. Decide   - Not Urgent and Important")
@@ -52,12 +52,12 @@ def selection():
     category_number = int(input("Enter the category number : "))
     task = input("Enter the task at hand : ")
     more_info = input("Enter details of task : ")
-    category = categories[category_number-1]
+    category = categories[category_number - 1]
     print("[INFO] Ticket Created...\n")
     return ticket_maker(category, task, more_info).return_ticket_info()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sample_ticket = selection()
     fields = ["timestamp", "category", "task", "more info"]
     r = 0

@@ -19,7 +19,7 @@ from modules.removing_tickets import delete_ticket
 # Finding out the location of the database from db_location.txt
 from modules.location_designator import location_retrieval
 
-'''This module is used as an interface for the CLI users.'''
+"""This module is used as an interface for the CLI users."""
 
 # Owned
 __author__ = "Datta Adithya"
@@ -34,30 +34,32 @@ def addition_ticket(conn):
         ticket = selection()
         insertion_row(conn, ticket)
         print("Adding Ticket to Eisen's Tickets...")
-        if input("Do you wish to continue adding entries? (y/n) : ") == 'n':
+        if input("Do you wish to continue adding entries? (y/n) : ") == "n":
             break
 
 
 def remove_ticket(conn):
     while True:
         display_info(conn)
-        ticket_id = int(input("Enter the ticket id of the ticket you wish to delete : "))
+        ticket_id = int(
+            input("Enter the ticket id of the ticket you wish to delete : ")
+        )
         delete_ticket(conn, ticket_id)
         print("Removing the ticket from Eisen's Tickets...")
-        if input("Do you wish to continue removing tickets? (y/n) : ") == 'n':
+        if input("Do you wish to continue removing tickets? (y/n) : ") == "n":
             break
 
 
 def table_initialization():
     db_loc = location_retrieval()
     conn = create_connection(db_loc)
-    create_sql_table = '''CREATE TABLE IF NOT EXISTS tickets (
+    create_sql_table = """CREATE TABLE IF NOT EXISTS tickets (
                             id integer PRIMARY KEY,
                             timestamp text NOT NULL,
                             category text NOT NULL,
                             task text NOT NULL,
                             more_info text
-                        );'''
+                        );"""
     if conn is not None:
         create_table(conn, create_sql_table)
         response = option_screen()

@@ -5,7 +5,7 @@
 from modules.create_db_components import create_connection
 
 
-'''This module is used to display ticket information from the database.'''
+"""This module is used to display ticket information from the database."""
 
 # Owned
 __author__ = "Datta Adithya"

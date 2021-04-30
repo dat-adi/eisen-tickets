@@ -13,7 +13,7 @@ from os.path import isfile
 def default_path():
     path_to_db = Path(__file__).parent
 
-    relative_path = '../../assets/'
+    relative_path = "../../assets/"
     relative_path = str((path_to_db / relative_path).resolve())
 
     return relative_path
@@ -28,26 +28,28 @@ def file_exist(file_location):
 
 def location_file_text():
     path_to_db = Path(__file__).parent
-    file_location = '../../assets/db_location.txt'
+    file_location = "../../assets/db_location.txt"
     return str((path_to_db / file_location).resolve())
 
 
 def location_retrieval():
     file_location = location_file_text()
     if file_exist(file_location):
-        with open(file_location, 'r') as f:
+        with open(file_location, "r") as f:
             db_path = f.read()
             f.close()
             return db_path
     else:
-        path_to_db = input("Enter the path to the location where you wish to store Eisen's Database (press enter to "
-                           "use default location): ")
+        path_to_db = input(
+            "Enter the path to the location where you wish to store Eisen's Database (press enter to "
+            "use default location): "
+        )
         if len(path_to_db) != 0:
-            path_to_db += r'\tickets.db'
+            path_to_db += r"\tickets.db"
         else:
-            path_to_db = default_path() + r'\tickets.db'
+            path_to_db = default_path() + r"\tickets.db"
 
-        with open(file_location, 'w') as f:
+        with open(file_location, "w") as f:
             f.write(path_to_db)
             f.close()
 
@@ -57,17 +59,17 @@ def location_retrieval():
 def location_gui_retrieval():
     file_location = location_file_text()
     if file_exist(file_location):
-        with open(file_location, 'r') as f:
+        with open(file_location, "r") as f:
             db_path = f.read()
             f.close()
             return db_path
     path_to_db = filedialog.askdirectory()
-    path_to_db = path_to_db.replace('/', '\\') + "\\tickets.db"
-    with open(file_location, 'w') as f:
+    path_to_db = path_to_db.replace("/", "\\") + "\\tickets.db"
+    with open(file_location, "w") as f:
         f.write(path_to_db)
         f.close()
     return path_to_db
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(location_gui_retrieval())

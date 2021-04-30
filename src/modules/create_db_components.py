@@ -5,7 +5,7 @@
 import sqlite3
 from sqlite3 import Error
 
-'''This module contains functions to connect, create and insert into the database.'''
+"""This module contains functions to connect, create and insert into the database."""
 
 # Owned
 __author__ = "Datta Adithya"
@@ -41,4 +41,3 @@ def create_connection(db_file):
         print(e)
 
     return conn
-

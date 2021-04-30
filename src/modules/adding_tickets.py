@@ -17,7 +17,7 @@ from modules.db_ticket_maker import ticket_maker
 from modules.location_designator import location_gui_retrieval
 
 
-'''This module is used to add new tickets into the database.'''
+"""This module is used to add new tickets into the database."""
 
 # Owned
 __author__ = "Datta Adithya"
@@ -34,13 +34,13 @@ class windows(tk.Tk):
         self.iconbitmap(self, default="../../assets/logo.ico")
         self.conn = conn
 
-        create_sql_table = '''CREATE TABLE IF NOT EXISTS tickets (
+        create_sql_table = """CREATE TABLE IF NOT EXISTS tickets (
                                 id integer PRIMARY KEY,
                                 timestamp text NOT NULL,
                                 category text NOT NULL,
                                 task text NOT NULL,
                                 more_info text
-                            );'''
+                            );"""
 
         if conn is not None:
             create_table(conn, create_sql_table)
@@ -72,17 +72,21 @@ class MainPage(tk.Frame):
         label = tk.Label(self, text="Main Page")
         label.pack(padx=10, pady=10)
 
-        switch_window_button = tk.Button(self, text="Add a ticket", command=lambda: controller.show_frame(TicketAdd))
+        switch_window_button = tk.Button(
+            self, text="Add a ticket", command=lambda: controller.show_frame(TicketAdd)
+        )
         switch_window_button.pack(side="bottom", fill=tk.X)
 
 
 def ticket_insertion(conn, cat_entry, task_entry, more_info_entry):
-    ticket = ticket_maker(cat_entry, task_entry.get(), more_info_entry.get()).return_ticket_info()
+    ticket = ticket_maker(
+        cat_entry, task_entry.get(), more_info_entry.get()
+    ).return_ticket_info()
     insertion_row(conn, ticket)
 
 
 def radio_selection(v):
-    categories = ['DO', 'DEC', 'DLG', 'DEL']
+    categories = ["DO", "DEC", "DLG", "DEL"]
     v.get()
     cate = categories[v.get()]
     return cate
@@ -92,7 +96,7 @@ class TicketAdd(tk.Frame):
     def __init__(self, parent, controller, conn):
         tk.Frame.__init__(self, parent)
         self.conn = conn
-        fields = ['Category', 'Task', 'More Info']
+        fields = ["Category", "Task", "More Info"]
         v = tk.IntVar()
 
         r = 0
@@ -110,17 +114,25 @@ class TicketAdd(tk.Frame):
         cat_entry_del.grid(row=0, column=4)
 
         task_entry = ttk.Entry(self)
-        task_entry.grid(row=1, column=1, columnspan=5, sticky=tk.W+tk.E)
+        task_entry.grid(row=1, column=1, columnspan=5, sticky=tk.W + tk.E)
 
         more_info_entry = ttk.Entry(self)
-        more_info_entry.grid(row=2, column=1, columnspan=5, sticky=tk.W+tk.E)
+        more_info_entry.grid(row=2, column=1, columnspan=5, sticky=tk.W + tk.E)
 
-        switch_window_button = tk.Button(self, text="Cancel", command=lambda: controller.show_frame(MainPage))
+        switch_window_button = tk.Button(
+            self, text="Cancel", command=lambda: controller.show_frame(MainPage)
+        )
         switch_window_button.grid(row=5, column=0)
-        submit_button = tk.Button(self, text="Submit",
-                                  command=lambda: [ticket_insertion(self.conn, radio_selection(v), task_entry,
-                                                                    more_info_entry),
-                                                   controller.show_frame(CompletionScreen)])
+        submit_button = tk.Button(
+            self,
+            text="Submit",
+            command=lambda: [
+                ticket_insertion(
+                    self.conn, radio_selection(v), task_entry, more_info_entry
+                ),
+                controller.show_frame(CompletionScreen),
+            ],
+        )
         submit_button.grid(row=5, column=1)
 
 
@@ -129,11 +141,13 @@ class CompletionScreen(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.conn = conn
         tk.Label(self, text="Ticket Added Successfully.").pack(padx=10, pady=10)
-        switch_window_button = ttk.Button(self, text="Return to menu", command=lambda: controller.show_frame(MainPage))
+        switch_window_button = ttk.Button(
+            self, text="Return to menu", command=lambda: controller.show_frame(MainPage)
+        )
         switch_window_button.pack(side="bottom", fill=tk.X)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     db_conn = location_gui_retrieval()
     test_window = windows(create_connection(db_conn))
     test_window.mainloop()

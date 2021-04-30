@@ -13,8 +13,8 @@ from modules.create_db_components import create_connection
 # Deletes the ticket from the database
 from modules.removing_tickets import delete_ticket
 
-'''This module is used to display all the tickets present in the 
-    Database.'''
+"""This module is used to display all the tickets present in the 
+    Database."""
 
 # Owned
 __author__ = "Datta Adithya"
@@ -98,16 +98,25 @@ class windows(tk.Tk):
         category = ticket[2]
         task = ticket[3]
         more_info = ticket[4]
-        fields = ['Ticket ID', 'Timestamp', 'Category', 'Task', 'More Info']
+        fields = ["Ticket ID", "Timestamp", "Category", "Task", "More Info"]
         details = [ticket_id, timestamp, category, task, more_info]
 
         r = 0
         for field in fields:
-            tk.Label(new_window, text=field, relief=tk.RIDGE, width=15).grid(row=r, column=0)
-            tk.Label(new_window, text=details[r], relief=tk.SUNKEN, width=100).grid(row=r, column=1)
+            tk.Label(new_window, text=field, relief=tk.RIDGE, width=15).grid(
+                row=r, column=0
+            )
+            tk.Label(new_window, text=details[r], relief=tk.SUNKEN, width=100).grid(
+                row=r, column=1
+            )
             r += 1
-        tk.Button(new_window, relief=tk.RIDGE, text="Delete Ticket", background="#FF3333",
-                  command=lambda: delete_ticket(self.conn, ticket_id)).grid(row=r, column=0, columnspan=2, sticky="ew")
+        tk.Button(
+            new_window,
+            relief=tk.RIDGE,
+            text="Delete Ticket",
+            background="#FF3333",
+            command=lambda: delete_ticket(self.conn, ticket_id),
+        ).grid(row=r, column=0, columnspan=2, sticky="ew")
 
 
 # Pages made for navigation through the different categories
@@ -118,8 +127,11 @@ class MainPage(tk.Frame):
         label = tk.Label(self, text="Start Page", font=text_font)
         label.pack(padx=10, pady=10)
 
-        eisen_display_button = ttk.Button(self, text="Display Selection",
-                                          command=lambda: controller.show_frame(EisenDisplay))
+        eisen_display_button = ttk.Button(
+            self,
+            text="Display Selection",
+            command=lambda: controller.show_frame(EisenDisplay),
+        )
         eisen_display_button.pack(side="bottom", fill=tk.X)
 
 
@@ -130,15 +142,27 @@ class EisenDisplay(tk.Frame):
         label = tk.Label(self, text="Eisen Display", font=text_font)
         label.pack(padx=10, pady=10)
 
-        main_button = ttk.Button(self, text="Return to main page", command=lambda: controller.show_frame(MainPage))
+        main_button = ttk.Button(
+            self,
+            text="Return to main page",
+            command=lambda: controller.show_frame(MainPage),
+        )
         main_button.pack(side="bottom", fill=tk.X)
-        del_button = ttk.Button(self, text="Eisen Delete", command=lambda: controller.show_frame(DelPage))
+        del_button = ttk.Button(
+            self, text="Eisen Delete", command=lambda: controller.show_frame(DelPage)
+        )
         del_button.pack(side="bottom", fill=tk.X)
-        dlg_button = ttk.Button(self, text="Eisen Delegate", command=lambda: controller.show_frame(DlgPage))
+        dlg_button = ttk.Button(
+            self, text="Eisen Delegate", command=lambda: controller.show_frame(DlgPage)
+        )
         dlg_button.pack(side="bottom", fill=tk.X)
-        dec_button = ttk.Button(self, text="Eisen Decide", command=lambda: controller.show_frame(DecPage))
+        dec_button = ttk.Button(
+            self, text="Eisen Decide", command=lambda: controller.show_frame(DecPage)
+        )
         dec_button.pack(side="bottom", fill=tk.X)
-        do_button = ttk.Button(self, text="Eisen Do", command=lambda: controller.show_frame(DoPage))
+        do_button = ttk.Button(
+            self, text="Eisen Do", command=lambda: controller.show_frame(DoPage)
+        )
         do_button.pack(side="bottom", fill=tk.X)
 
 
@@ -150,13 +174,22 @@ class DoPage(tk.Frame):
 
         do_rows = do_cat(conn)
         for element in do_rows:
-            tk.Button(self, text=element[3], fg="black",
-                      command=lambda ele=element: controller.ticket_display(ele)).pack(fill=tk.X)
+            tk.Button(
+                self,
+                text=element[3],
+                fg="black",
+                command=lambda ele=element: controller.ticket_display(ele),
+            ).pack(fill=tk.X)
 
-        eisen_display_button = ttk.Button(self, text="Display Selection",
-                                          command=lambda: controller.show_frame(EisenDisplay))
+        eisen_display_button = ttk.Button(
+            self,
+            text="Display Selection",
+            command=lambda: controller.show_frame(EisenDisplay),
+        )
         eisen_display_button.pack(side="bottom", fill=tk.X)
-        dec_button = ttk.Button(self, text="Eisen Decide", command=lambda: controller.show_frame(DecPage))
+        dec_button = ttk.Button(
+            self, text="Eisen Decide", command=lambda: controller.show_frame(DecPage)
+        )
         dec_button.pack(side="bottom", fill=tk.X)
 
 
@@ -168,13 +201,22 @@ class DecPage(tk.Frame):
 
         dec_rows = dec_cat(conn)
         for element in dec_rows:
-            tk.Button(self, text=element[3], fg="black",
-                      command=lambda ele=element: controller.ticket_display(ele)).pack(fill=tk.X)
+            tk.Button(
+                self,
+                text=element[3],
+                fg="black",
+                command=lambda ele=element: controller.ticket_display(ele),
+            ).pack(fill=tk.X)
 
-        eisen_display_button = ttk.Button(self, text="Display Selection",
-                                          command=lambda: controller.show_frame(EisenDisplay))
+        eisen_display_button = ttk.Button(
+            self,
+            text="Display Selection",
+            command=lambda: controller.show_frame(EisenDisplay),
+        )
         eisen_display_button.pack(side="bottom", fill=tk.X)
-        dlg_button = ttk.Button(self, text="Eisen Delegate", command=lambda: controller.show_frame(DlgPage))
+        dlg_button = ttk.Button(
+            self, text="Eisen Delegate", command=lambda: controller.show_frame(DlgPage)
+        )
         dlg_button.pack(side="bottom", fill=tk.X)
 
 
@@ -186,13 +228,22 @@ class DlgPage(tk.Frame):
 
         dlg_rows = dlg_cat(conn)
         for element in dlg_rows:
-            tk.Button(self, text=element[3], fg="black",
-                      command=lambda ele=element: controller.ticket_display(ele)).pack(fill=tk.X)
+            tk.Button(
+                self,
+                text=element[3],
+                fg="black",
+                command=lambda ele=element: controller.ticket_display(ele),
+            ).pack(fill=tk.X)
 
-        eisen_display_button = ttk.Button(self, text="Display Selection",
-                                          command=lambda: controller.show_frame(EisenDisplay))
+        eisen_display_button = ttk.Button(
+            self,
+            text="Display Selection",
+            command=lambda: controller.show_frame(EisenDisplay),
+        )
         eisen_display_button.pack(side="bottom", fill=tk.X)
-        del_button = ttk.Button(self, text="Eisen Delete", command=lambda: controller.show_frame(DelPage))
+        del_button = ttk.Button(
+            self, text="Eisen Delete", command=lambda: controller.show_frame(DelPage)
+        )
         del_button.pack(side="bottom", fill=tk.X)
 
 
@@ -204,13 +255,22 @@ class DelPage(tk.Frame):
 
         del_rows = del_cat(conn)
         for element in del_rows:
-            tk.Button(self, text=element[3], fg="black",
-                      command=lambda ele=element: controller.ticket_display(ele)).pack(fill=tk.X)
+            tk.Button(
+                self,
+                text=element[3],
+                fg="black",
+                command=lambda ele=element: controller.ticket_display(ele),
+            ).pack(fill=tk.X)
 
-        eisen_display_button = ttk.Button(self, text="Display Selection",
-                                          command=lambda: controller.show_frame(EisenDisplay))
+        eisen_display_button = ttk.Button(
+            self,
+            text="Display Selection",
+            command=lambda: controller.show_frame(EisenDisplay),
+        )
         eisen_display_button.pack(side="bottom", fill=tk.X)
-        do_button = ttk.Button(self, text="Eisen Do", command=lambda: controller.show_frame(DoPage))
+        do_button = ttk.Button(
+            self, text="Eisen Do", command=lambda: controller.show_frame(DoPage)
+        )
         do_button.pack(side="bottom", fill=tk.X)
 
 
