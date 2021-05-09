@@ -19,7 +19,7 @@ def option_screen():
     print("2. Create new ticket")
     print("3. Remove a ticket")
     print("-" * 10)
-    choice = int(input("choice> "))
+    choice = eval(input("choice> "))
     if choice == 1:
         print("Pick an option to display the field you would like : ")
 
@@ -28,11 +28,13 @@ def option_screen():
         print("3. Delegate - Urgent and Not Important")
         print("4. Delete   - Not Urgent and Not Important")
         print("5. All fields\n")
-        return int(input("Enter option : "))
+        return eval(input("Enter option : "))
     elif choice == 2:
         return 6
     elif choice == 3:
         return 7
+    else
+        print("Incorrect option chosen")
 
 
 if __name__ == "__main__":

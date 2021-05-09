@@ -49,7 +49,7 @@ def selection():
     print("4. Delete   - Not Urgent and Not Important\n")
 
     categories = ["DO", "DEC", "DLG", "DEL"]
-    category_number = int(input("Enter the category number : "))
+    category_number = eval(input("Enter the category number : "))
     task = input("Enter the task at hand : ")
     more_info = input("Enter details of task : ")
     category = categories[category_number - 1]
