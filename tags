@@ -1,0 +1,177 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/dat-adi/Code/eisen-tickets/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210110.0/
+Adding a ticket into the database	README.md	/^### Adding a ticket into the database$/;"	S	section:Eisen-tickets""How Eisen's Tickets works
+Attribution	CODE_OF_CONDUCT.md	/^## Attribution$/;"	s	chapter:Contributor Covenant Code of Conduct
+CLI	README.md	/^#### CLI$/;"	t	subsection:Eisen-tickets""How Eisen's Tickets works""Displaying the tickets entered
+CompletionScreen	src/modules/adding_tickets.py	/^class CompletionScreen(tk.Frame):$/;"	c
+Contributing	CONTRIBUTING.md	/^# Contributing$/;"	c
+Contributing to eisen-tickets	README.md	/^## Contributing to eisen-tickets$/;"	s	chapter:Eisen-tickets
+Contributor Covenant Code of Conduct	CODE_OF_CONDUCT.md	/^# Contributor Covenant Code of Conduct$/;"	c
+DecPage	src/modules/display_tickets.py	/^class DecPage(tk.Frame):$/;"	c
+DelPage	src/modules/display_tickets.py	/^class DelPage(tk.Frame):$/;"	c
+Displaying the tickets entered	README.md	/^### Displaying the tickets entered$/;"	S	section:Eisen-tickets""How Eisen's Tickets works
+DlgPage	src/modules/display_tickets.py	/^class DlgPage(tk.Frame):$/;"	c
+DoPage	src/modules/display_tickets.py	/^class DoPage(tk.Frame):$/;"	c
+Eisen-tickets	README.md	/^# Eisen-tickets$/;"	c
+EisenDisplay	src/modules/display_tickets.py	/^class EisenDisplay(tk.Frame):$/;"	c
+Enforcement	CODE_OF_CONDUCT.md	/^## Enforcement$/;"	s	chapter:Contributor Covenant Code of Conduct
+GUI	README.md	/^#### GUI$/;"	t	subsection:Eisen-tickets""How Eisen's Tickets works""Displaying the tickets entered
+How Eisen's Tickets works	README.md	/^## How Eisen's Tickets works$/;"	s	chapter:Eisen-tickets
+Installation	README.md	/^## Installation$/;"	s	chapter:Eisen-tickets
+MainPage	src/modules/adding_tickets.py	/^class MainPage(tk.Frame):$/;"	c
+MainPage	src/modules/display_tickets.py	/^class MainPage(tk.Frame):$/;"	c
+Our Pledge	CODE_OF_CONDUCT.md	/^## Our Pledge$/;"	s	chapter:Contributor Covenant Code of Conduct
+Our Responsibilities	CODE_OF_CONDUCT.md	/^## Our Responsibilities$/;"	s	chapter:Contributor Covenant Code of Conduct
+Our Standards	CODE_OF_CONDUCT.md	/^## Our Standards$/;"	s	chapter:Contributor Covenant Code of Conduct
+Scope	CODE_OF_CONDUCT.md	/^## Scope$/;"	s	chapter:Contributor Covenant Code of Conduct
+TicketAdd	src/modules/adding_tickets.py	/^class TicketAdd(tk.Frame):$/;"	c
+What the Eisen-tickets is all about.	README.md	/^## What the Eisen-tickets is all about.$/;"	s	chapter:Eisen-tickets
+__author__	src/main.py	/^__author__ = "Datta Adithya"$/;"	v
+__author__	src/modules/adding_tickets.py	/^__author__ = "Datta Adithya"$/;"	v
+__author__	src/modules/create_db_components.py	/^__author__ = "Datta Adithya"$/;"	v
+__author__	src/modules/db_display.py	/^__author__ = "Datta Adithya"$/;"	v
+__author__	src/modules/db_main.py	/^__author__ = "Datta Adithya"$/;"	v
+__author__	src/modules/db_option_screen.py	/^__author__ = "Datta Adithya"$/;"	v
+__author__	src/modules/db_ticket_maker.py	/^__author__ = "Datta Adithya"$/;"	v
+__author__	src/modules/display_ticket_info_tk.py	/^__author__ = "Datta Adithya"$/;"	v
+__author__	src/modules/display_tickets.py	/^__author__ = "Datta Adithya"$/;"	v
+__author__	src/modules/removing_tickets.py	/^__author__ = "Datta Adithya"$/;"	v
+__credits__	src/main.py	/^__credits__ = ["Datta Adithya"]$/;"	v
+__credits__	src/modules/adding_tickets.py	/^__credits__ = ["Datta Adithya"]$/;"	v
+__credits__	src/modules/create_db_components.py	/^__credits__ = ["Datta Adithya"]$/;"	v
+__credits__	src/modules/db_display.py	/^__credits__ = ["Datta Adithya"]$/;"	v
+__credits__	src/modules/db_main.py	/^__credits__ = ["Datta Adithya"]$/;"	v
+__credits__	src/modules/db_option_screen.py	/^__credits__ = ["Datta Adithya"]$/;"	v
+__credits__	src/modules/db_ticket_maker.py	/^__credits__ = ["Datta Adithya"]$/;"	v
+__credits__	src/modules/display_ticket_info_tk.py	/^__credits__ = ["Datta Adithya"]$/;"	v
+__credits__	src/modules/display_tickets.py	/^__credits__ = ["Datta Adithya"]$/;"	v
+__credits__	src/modules/removing_tickets.py	/^__credits__ = ["Datta Adithya"]$/;"	v
+__email__	src/main.py	/^__email__ = "dat.adithya@gmail.com"$/;"	v
+__email__	src/modules/adding_tickets.py	/^__email__ = "dat.adithya@gmail.com"$/;"	v
+__email__	src/modules/create_db_components.py	/^__email__ = "dat.adithya@gmail.com"$/;"	v
+__email__	src/modules/db_display.py	/^__email__ = "dat.adithya@gmail.com"$/;"	v
+__email__	src/modules/db_main.py	/^__email__ = "dat.adithya@gmail.com"$/;"	v
+__email__	src/modules/db_option_screen.py	/^__email__ = "dat.adithya@gmail.com"$/;"	v
+__email__	src/modules/db_ticket_maker.py	/^__email__ = "dat.adithya@gmail.com"$/;"	v
+__email__	src/modules/display_ticket_info_tk.py	/^__email__ = "dat.adithya@gmail.com"$/;"	v
+__email__	src/modules/display_tickets.py	/^__email__ = "dat.adithya@gmail.com"$/;"	v
+__email__	src/modules/removing_tickets.py	/^__email__ = "dat.adithya@gmail.com"$/;"	v
+__init__	src/modules/adding_tickets.py	/^    def __init__(self, conn, *args, **kwargs):$/;"	m	class:windows
+__init__	src/modules/adding_tickets.py	/^    def __init__(self, parent, controller, conn):$/;"	m	class:CompletionScreen
+__init__	src/modules/adding_tickets.py	/^    def __init__(self, parent, controller, conn):$/;"	m	class:MainPage
+__init__	src/modules/adding_tickets.py	/^    def __init__(self, parent, controller, conn):$/;"	m	class:TicketAdd
+__init__	src/modules/db_ticket_maker.py	/^    def __init__(self, category, task, more_info):$/;"	m	class:ticket_maker
+__init__	src/modules/display_ticket_info_tk.py	/^    def __init__(self, ticket):$/;"	m	class:display_ticket
+__init__	src/modules/display_tickets.py	/^    def __init__(self, conn, *args, **kwargs):$/;"	m	class:windows
+__init__	src/modules/display_tickets.py	/^    def __init__(self, parent, controller, conn):$/;"	m	class:DecPage
+__init__	src/modules/display_tickets.py	/^    def __init__(self, parent, controller, conn):$/;"	m	class:DelPage
+__init__	src/modules/display_tickets.py	/^    def __init__(self, parent, controller, conn):$/;"	m	class:DlgPage
+__init__	src/modules/display_tickets.py	/^    def __init__(self, parent, controller, conn):$/;"	m	class:DoPage
+__init__	src/modules/display_tickets.py	/^    def __init__(self, parent, controller, conn):$/;"	m	class:EisenDisplay
+__init__	src/modules/display_tickets.py	/^    def __init__(self, parent, controller, conn):$/;"	m	class:MainPage
+__license__	src/main.py	/^__license__ = "MIT"$/;"	v
+__license__	src/modules/adding_tickets.py	/^__license__ = "MIT"$/;"	v
+__license__	src/modules/create_db_components.py	/^__license__ = "MIT"$/;"	v
+__license__	src/modules/db_display.py	/^__license__ = "MIT"$/;"	v
+__license__	src/modules/db_main.py	/^__license__ = "MIT"$/;"	v
+__license__	src/modules/db_option_screen.py	/^__license__ = "MIT"$/;"	v
+__license__	src/modules/db_ticket_maker.py	/^__license__ = "MIT"$/;"	v
+__license__	src/modules/display_ticket_info_tk.py	/^__license__ = "MIT"$/;"	v
+__license__	src/modules/display_tickets.py	/^__license__ = "MIT"$/;"	v
+__license__	src/modules/removing_tickets.py	/^__license__ = "MIT"$/;"	v
+__maintainer__	src/main.py	/^__maintainer__ = "Datta Adithya"$/;"	v
+__maintainer__	src/modules/adding_tickets.py	/^__maintainer__ = "Datta Adithya"$/;"	v
+__maintainer__	src/modules/create_db_components.py	/^__maintainer__ = "Datta Adithya"$/;"	v
+__maintainer__	src/modules/db_display.py	/^__maintainer__ = "Datta Adithya"$/;"	v
+__maintainer__	src/modules/db_main.py	/^__maintainer__ = "Datta Adithya"$/;"	v
+__maintainer__	src/modules/db_option_screen.py	/^__maintainer__ = "Datta Adithya"$/;"	v
+__maintainer__	src/modules/db_ticket_maker.py	/^__maintainer__ = "Datta Adithya"$/;"	v
+__maintainer__	src/modules/display_ticket_info_tk.py	/^__maintainer__ = "Datta Adithya"$/;"	v
+__maintainer__	src/modules/display_tickets.py	/^__maintainer__ = "Datta Adithya"$/;"	v
+__maintainer__	src/modules/removing_tickets.py	/^__maintainer__ = "Datta Adithya"$/;"	v
+add_more_info	src/modules/db_ticket_maker.py	/^    def add_more_info(self, more_info):$/;"	m	class:ticket_maker
+addition_ticket	src/modules/db_main.py	/^def addition_ticket(conn):$/;"	f
+change_category	src/modules/db_ticket_maker.py	/^    def change_category(self, category):$/;"	m	class:ticket_maker
+change_task	src/modules/db_ticket_maker.py	/^    def change_task(self, task):$/;"	m	class:ticket_maker
+conn	src/modules/removing_tickets.py	/^    conn = create_connection(r"D:\\eisen-tickets\\assets\\tickets.db")$/;"	v
+connection	src/modules/db_display.py	/^    connection = create_connection(r"D:\\eisen-tickets\\assets\\tickets.db")$/;"	v
+connection	src/modules/display_tickets.py	/^    connection = create_connection(r"D:\\eisen-tickets\\assets\\tickets.db")$/;"	v
+cont	src/main.py	/^        cont = input("Do you wish to restart the service? (y\/n) : ")$/;"	v
+create_connection	src/modules/create_db_components.py	/^def create_connection(db_file):$/;"	f
+create_table	src/modules/create_db_components.py	/^def create_table(conn, create_table_sql):$/;"	f
+db_conn	src/modules/adding_tickets.py	/^    db_conn = location_gui_retrieval()$/;"	v
+dec_cat	src/modules/display_tickets.py	/^def dec_cat(conn):$/;"	f
+default_path	src/modules/location_designator.py	/^def default_path():$/;"	f
+del_cat	src/modules/display_tickets.py	/^def del_cat(conn):$/;"	f
+delete_ticket	src/modules/removing_tickets.py	/^def delete_ticket(connect, ticket_id):$/;"	f
+display_info	src/modules/db_display.py	/^def display_info(conn):$/;"	f
+display_info_category	src/modules/db_display.py	/^def display_info_category(conn, category):$/;"	f
+display_ticket	src/modules/display_ticket_info_tk.py	/^class display_ticket:$/;"	c
+dlg_cat	src/modules/display_tickets.py	/^def dlg_cat(conn):$/;"	f
+do_cat	src/modules/display_tickets.py	/^def do_cat(conn):$/;"	f
+dt	src/modules/db_ticket_maker.py	/^from datetime import datetime as dt$/;"	x	nameref:unknown:datetime
+fields	src/modules/db_ticket_maker.py	/^    fields = ["timestamp", "category", "task", "more info"]$/;"	v
+file_exist	src/modules/location_designator.py	/^def file_exist(file_location):$/;"	f
+four_windows	src/modules/display_tickets.py	/^    four_windows = windows(connection)$/;"	v
+insertion_row	src/modules/create_db_components.py	/^def insertion_row(conn, ticket):$/;"	f
+location_file_text	src/modules/location_designator.py	/^def location_file_text():$/;"	f
+location_gui_retrieval	src/modules/location_designator.py	/^def location_gui_retrieval():$/;"	f
+location_retrieval	src/modules/location_designator.py	/^def location_retrieval():$/;"	f
+ns919bca7d0101	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/2000/svg
+ns919bca7d0201	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0301	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0401	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0501	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0601	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0701	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0801	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0901	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0a01	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0b01	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0c01	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0d01	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0e01	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d0f01	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d1001	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d1101	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d1201	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d1301	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d1401	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d1501	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d1601	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d1701	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+ns919bca7d1801	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xhtml
+option_screen	src/modules/db_option_screen.py	/^def option_screen():$/;"	f
+r	src/modules/db_ticket_maker.py	/^    r = 0$/;"	v
+radio_selection	src/modules/adding_tickets.py	/^def radio_selection(v):$/;"	f
+remove_ticket	src/modules/db_main.py	/^def remove_ticket(conn):$/;"	f
+return_category	src/modules/db_ticket_maker.py	/^    def return_category(self):$/;"	m	class:ticket_maker
+return_ticket_info	src/modules/db_ticket_maker.py	/^    def return_ticket_info(self):$/;"	m	class:ticket_maker
+sample_ticket	src/modules/db_ticket_maker.py	/^    sample_ticket = selection()$/;"	v
+selection	src/modules/db_ticket_maker.py	/^def selection():$/;"	f
+show_frame	src/modules/adding_tickets.py	/^    def show_frame(self, cont):$/;"	m	class:windows
+show_frame	src/modules/display_tickets.py	/^    def show_frame(self, cont):$/;"	m	class:windows
+table_initialization	src/modules/db_main.py	/^def table_initialization():$/;"	f
+test_window	src/modules/adding_tickets.py	/^    test_window = windows(create_connection(db_conn))$/;"	v
+text_font	src/modules/display_tickets.py	/^text_font = ("Helvetica", 12)$/;"	v
+tick	src/modules/display_ticket_info_tk.py	/^    tick = (1, "23\/34\/12", "DO", "something", "random text lul")$/;"	v
+ticket_display	src/modules/display_tickets.py	/^    def ticket_display(self, ticket):$/;"	m	class:windows
+ticket_insertion	src/modules/adding_tickets.py	/^def ticket_insertion(conn, cat_entry, task_entry, more_info_entry):$/;"	f
+ticket_maker	src/modules/db_ticket_maker.py	/^class ticket_maker:$/;"	c
+ticket_retriever	src/modules/display_ticket_info_tk.py	/^def ticket_retriever(ticket):$/;"	f
+tk	src/modules/adding_tickets.py	/^import tkinter as tk$/;"	I	nameref:module:tkinter
+tk	src/modules/display_tickets.py	/^import tkinter as tk$/;"	I	nameref:module:tkinter
+tkinter_display	src/modules/display_ticket_info_tk.py	/^    def tkinter_display(self):$/;"	m	class:display_ticket
+version_info	src/main.py	/^    version_info = open("..\/assets\/version.txt", "r").read()$/;"	v
+windows	src/modules/adding_tickets.py	/^class windows(tk.Tk):$/;"	c
+windows	src/modules/display_tickets.py	/^class windows(tk.Tk):$/;"	c
+xlink	assets/eisen-tickets.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" versi/;"	n	uri:http://www.w3.org/1999/xlink
